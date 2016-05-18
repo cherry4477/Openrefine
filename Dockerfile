@@ -5,6 +5,7 @@ RUN tar zxf openrefine-linux-2.6-rc.2.tar.gz
 RUN cd openrefine-2.6-rc.2/
 
 WORKDIR openrefine-2.6-rc.2/
+RUN ./refine -i 0.0.0.0
 EXPOSE 3333
 
 CMD ./refine
