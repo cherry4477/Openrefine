@@ -87,7 +87,9 @@ LICENSE.txt  README.txt  licenses  refine  refine.ini  server  webapp
 
 服务中默认的配置的ip是127.0.0.1  默认的端口号是3333   ，  因为在容器中并不能使用127.0.0.1去对外连接，故改为0.0.0.0，端口号尽量使用我们的习惯，所以我就暂且把它改为80，方便我们访问，命令如下
 
-# ./refine -i 0.0.0.0 -p 80
+ ./refine -i 0.0.0.0 -p 80
+ 
+ 之后出现如下信息
 
 Starting OpenRefine at 'http://0.0.0.0:80/'
 
