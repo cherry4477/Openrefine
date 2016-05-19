@@ -40,21 +40,6 @@
 
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
         
-        Found Docker image 67557c7 (13 days old) from Docker Hub for "java:7"
-        An image stream will be created as "java:7" that will track the source image
-        A  Docker build using source code from https://github.com/szx0512/szx.git will be created
-        The resulting image will be pushed to image stream "szx:latest"
-        Every time "java:7" changes a new build will be triggered  
-        Creating resources with label build=szx ...
-        imagestream "java" created
-        imagestream "szx" created
-        buildconfig "szx" created
-        Success
-        Build configuration "szx" created and build triggered.
-        Run 'oc logs -f bc/szx' to stream the build progress.
-        
-
-  
   等待build完成
   
 2.build完成之后 ，我们使用oc run命令指定一个名字，并指定镜像给他跑起来  
@@ -79,6 +64,8 @@
     NAME                     READY     STATUS      RESTARTS   AGE
     openrefine-1-1pel0       1/1       Running     0          1m
   
+
+
 我们看到openrefine正在运行
 
 4.因openrefine使用的是默认配置，所以我们需要去到容器里看一下它的配置是什么，该怎样去修改
