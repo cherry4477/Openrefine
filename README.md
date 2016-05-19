@@ -3,25 +3,27 @@
 
     FROM java:7           
 
-程序需要java环境，所以FROM一个java基础镜像
+程序需要java环境，所以FROM一个java基础镜像  
 
     RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/2.6-rc.2/openrefine-linux-2.6-rc.2.tar.gz
 
-下载程序打成的tar包
+下载程序打成的tar包  
+
     RUN tar zxf openrefine-linux-2.6-rc.2.tar.gz
 
-解压tar包
+解压tar包  
+
     RUN cd openrefine-2.6-rc.2/
 
-进入程序目录
+进入程序目录  
 
     WORKDIR openrefine-2.6-rc.2/
 
-设置工作目录为程序所在的目录      
+设置工作目录为程序所在的目录        
 
     EXPOSE 3333 
 
-映射端口3333，程序默认的端口，可以再调整
+映射端口3333，程序默认的端口，可以再调整  
 
     CMD ./refine
 
@@ -33,7 +35,8 @@
 #Openrefine部署
 
 1.  首先将我们需要的代码build下来
-      [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git
+
+    [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git
     --> Found Docker image 67557c7 (13 days old) from Docker Hub for "java:7"
         * An image stream will be created as "java:7" that will track the source image
         * A Docker build using source code from https://github.com/szx0512/szx.git will be created
