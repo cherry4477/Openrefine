@@ -41,7 +41,6 @@
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
         
   等待build完成  
-    
 2.build完成之后 ，我们使用`oc run`命令指定一个名字，并指定镜像给他跑起来  
 
 
