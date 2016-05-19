@@ -41,11 +41,10 @@
   等待build完成
   
 
+2.   build完成之后 ，我们使用`oc run`命令指定一个名字，并指定镜像给他跑起来
 
-2.  build完成之后 ，我们使用`oc run`命令指定一个名字，并指定镜像给他跑起来
 
-
-    [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=172.30.38.161:5000/songzx/openrefine
+        [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=172.30.38.161:5000/songzx/openrefine
 
         deploymentconfig "openrefine" created
         [songzx@openshift-container-deploy2 ~]$ oc get po
