@@ -47,11 +47,11 @@
 
     [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=172.30.38.161:5000/songzx/openrefine
 
-    deploymentconfig "openrefine" created
-    [songzx@openshift-container-deploy2 ~]$ oc get po
-    NAME                     READY     STATUS              RESTARTS   AGE
-    openrefine-1-1pel0       0/1       ContainerCreating   0          2s
-    openrefine-1-deploy      1/1       Running             0          6s
+        deploymentconfig "openrefine" created
+        [songzx@openshift-container-deploy2 ~]$ oc get po
+        NAME                     READY     STATUS              RESTARTS   AGE
+        openrefine-1-1pel0       0/1       ContainerCreating   0          2s
+        openrefine-1-deploy      1/1       Running             0          6s
 
 我们等他部署完成  
 
