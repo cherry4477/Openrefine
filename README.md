@@ -54,6 +54,7 @@
         Build configuration "szx" created and build triggered.
         Run 'oc logs -f bc/szx' to stream the build progress.
 
+  
   等待build完成
   
 2.build完成之后 ，我们使用oc run命令指定一个名字，并指定镜像给他跑起来  
