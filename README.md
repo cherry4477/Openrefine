@@ -45,7 +45,6 @@
         A  Docker build using source code from https://github.com/szx0512/szx.git will be created
         The resulting image will be pushed to image stream "szx:latest"
         Every time "java:7" changes a new build will be triggered  
-
     --> Creating resources with label build=szx ...
         imagestream "java" created
         imagestream "szx" created
@@ -53,6 +52,7 @@
     --> Success
         Build configuration "szx" created and build triggered.
         Run 'oc logs -f bc/szx' to stream the build progress.
+        
 
   
   等待build完成
@@ -72,12 +72,10 @@
 我们等他部署完成
 
 
-3. 部署完成后，我们使用oc get pod 查看一下pod运行状况  
+3. 部署完成后，我们使用oc get pod 查看一下pod运行状况
 
 
-
-
-     [songzx@openshift-container-deploy2 ~]$ oc get po
+    [songzx@openshift-container-deploy2 ~]$ oc get po
     NAME                     READY     STATUS      RESTARTS   AGE
     openrefine-1-1pel0       1/1       Running     0          1m
   
