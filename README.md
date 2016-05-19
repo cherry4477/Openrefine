@@ -1,4 +1,4 @@
-# Openrefine
+# Openrefine Dockerfile
 
 
 FROM java:7           
