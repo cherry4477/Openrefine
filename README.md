@@ -66,14 +66,14 @@
 
 我们看到openrefine正在运行  
   
-.  因openrefine使用的是默认配置，所以我们需要去到容器里看一下它的配置是什么，该怎样去修改
+.  因openrefine使用的是默认配置，所以我们按照自己的需要去修改，dockerfile里面写的是默认配置，直接使用即可
 
 
         [songzx@openshift-container-deploy2 ~]$ oc rsh openrefine-1-1pel0
         # 
         # 
 
-我们通过`oc rsh` 命令连进了容器，容器中有个启动脚本需要我们手动启动，脚本名字是 `refine`，我们可以看一下
+我们通过`oc rsh` 命令连进了容器，容器中有个启动脚本，我们可以通过它来配置，脚本名字是 `refine`，我们可以看一下
 
 
         # ls
@@ -82,7 +82,7 @@
   所有的配置工作已经全都集成在了dockerfile里面，如果需要更改用的ip和端口，可以根据refine命令去完成，
 `./refine help`   可以查看所有帮助信息
 
-之后我们可以通过`oc logs -f openrefine`命令查看服务的启动日志
+了解完启动脚本之后我们可以通过`oc logs -f openrefine`命令查看服务的启动日志
 
 
 我们看到已经启动完成：
