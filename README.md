@@ -46,7 +46,7 @@
 
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=index.alauda.cn/lixiaowei/openrefine
+    [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=172.30.38.161:5000/songzx/openrefine
 
     deploymentconfig "openrefine" created
     [songzx@openshift-container-deploy2 ~]$ oc get po
