@@ -41,9 +41,10 @@
     
   等待build完成
   
-  
+
+
 2.  build完成之后 ，我们使用`oc run`命令指定一个名字，并指定镜像给他跑起来
-  
+
 
 
     [songzx@openshift-container-deploy2 ~]$ oc run openrefine --image=172.30.38.161:5000/songzx/openrefine
@@ -117,7 +118,7 @@
     [songzx@openshift-container-deploy2 ~]$ oc expose dc openrefine --port=80
     service "openrefine" exposed
   
-   
+
 6.  接下来就是我们给openrefine服务做一个route，让他可以外网访问
 
 
