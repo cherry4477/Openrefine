@@ -56,9 +56,7 @@
 
 我们等他部署完成
 
-
-3. 部署完成后，我们使用oc get pod 查看一下pod运行状况  
-
+3.部署完成后，我们使用oc get pod 查看一下pod运行状况 
 
     songzx@openshift-container-deploy2 ~]$ oc get po
     NAME                     READY     STATUS      RESTARTS   AGE
