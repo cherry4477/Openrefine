@@ -65,7 +65,7 @@
 
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc get po
+    songzx@openshift-container-deploy2 ~]$ oc get po
     NAME                     READY     STATUS      RESTARTS   AGE
     openrefine-1-1pel0       1/1       Running     0          1m
   
