@@ -40,7 +40,7 @@
 
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
         
-  等待build完成
+  等待build完成  
   
 2.build完成之后 ，我们使用oc run命令指定一个名字，并指定镜像给他跑起来  
 
@@ -54,7 +54,7 @@
     openrefine-1-1pel0       0/1       ContainerCreating   0          2s
     openrefine-1-deploy      1/1       Running             0          6s
 
-我们等他部署完成
+我们等他部署完成  
 
 3.部署完成后，我们使用oc get pod 查看一下pod运行状况 
 
@@ -64,7 +64,7 @@
   
 
 
-我们看到openrefine正在运行
+我们看到openrefine正在运行  
 
 4.因openrefine使用的是默认配置，所以我们需要去到容器里看一下它的配置是什么，该怎样去修改
 
@@ -106,19 +106,19 @@
 
     Point your browser to http://0.0.0.0:80/ to start using Refine. (1298ms)
 
-这个时候我们看到会有报错信息，这个不影响我们正常访问使用，因为这个服务配置文件中有一个启动后需要打开浏览器，这里显示找不到浏览器，所以我们不用在意这个报错，只要外部可以正常使用正常显示就可以了，接下来我们退出容器，去给服务配置route
+这个时候我们看到会有报错信息，这个不影响我们正常访问使用，因为这个服务配置文件中有一个启动后需要打开浏览器，这里显示找不到浏览器，所以我们不用在意这个报错，只要外部可以正常使用正常显示就可以了，接下来我们退出容器，去给服务配置route  
 
 
 5.我们先生成一个svc，并指定端口为80
 
     [songzx@openshift-container-deploy2 ~]$ oc expose dc openrefine --port=80
     service "openrefine" exposed
-
+  
 
 6.接下来就是我们给openrefine服务做一个route，让他可以外网访问
 
     [songzx@openshift-container-deploy2 ~]$ oc expose svc openrefine 
-    route "openrefine" exposed
+    route "openrefine" exposed  
 
 7.我们通过查看服务的域名去进行访问测试，这样，openrefine就搭建完成了。
 
