@@ -58,9 +58,9 @@
 3.  部署完成后，我们使用`oc get pod` 查看一下pod运行状况
 
 
-    songzx@openshift-container-deploy2 ~]$ oc get po
-    NAME                     READY     STATUS      RESTARTS   AGE
-    openrefine-1-1pel0       1/1       Running     0          1m
+        songzx@openshift-container-deploy2 ~]$ oc get po
+        NAME                     READY     STATUS      RESTARTS   AGE
+        openrefine-1-1pel0       1/1       Running     0          1m
   
 
 
@@ -70,15 +70,15 @@
 4.  因openrefine使用的是默认配置，所以我们需要去到容器里看一下它的配置是什么，该怎样去修改
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc rsh openrefine-1-1pel0
-    # 
-    # 
+        [songzx@openshift-container-deploy2 ~]$ oc rsh openrefine-1-1pel0
+        # 
+        # 
 
 我们通过`oc rsh` 命令连进了容器，容器中有个启动脚本需要我们手动启动，脚本名字是 `refine`，我们可以看一下
 
 
-    # ls
-    LICENSE.txt  README.txt  licenses  refine  refine.ini  server  webapp
+        # ls
+        LICENSE.txt  README.txt  licenses  refine  refine.ini  server  webapp
   
 服务中默认的配置的ip是127.0.0.1  默认的端口号是3333   ，  因为在容器中并不能使用127.0.0.1去对外连接，故改为0.0.0.0，端口号尽量使用我们的习惯，所以我就暂且把它改为80，方便我们访问，命令如下
 
@@ -113,16 +113,16 @@
 5.  我们先生成一个svc，并指定端口为80
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc expose dc openrefine --port=80
-    service "openrefine" exposed
+        [songzx@openshift-container-deploy2 ~]$ oc expose dc openrefine --port=80
+        service "openrefine" exposed
   
 
 6.  接下来就是我们给openrefine服务做一个route，让他可以外网访问
 
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc expose svc openrefine 
-    route "openrefine" exposed
+        [songzx@openshift-container-deploy2 ~]$ oc expose svc openrefine 
+        route "openrefine" exposed
 
 
 
@@ -131,6 +131,6 @@
 
 
 
-    [songzx@openshift-container-deploy2 ~]$ oc get route
-    NAME         HOST/PORT                         PATH      SERVICE      TERMINATION   LABELS
-    openrefine   openrefine-songzx.app.dataos.io             openrefine                 run=openrefine
+        [songzx@openshift-container-deploy2 ~]$ oc get route
+        NAME         HOST/PORT                         PATH      SERVICE      TERMINATION   LABELS
+        openrefine   openrefine-songzx.app.dataos.io             openrefine                 run=openrefine
