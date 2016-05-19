@@ -124,7 +124,7 @@
         [songzx@openshift-container-deploy2 ~]$ oc expose svc openrefine 
         route "openrefine" exposed
 
-
+ 
 
 7.  我们通过查看服务的域名去进行访问测试，这样，openrefine就搭建完成了。
 
