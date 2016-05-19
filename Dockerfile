@@ -8,4 +8,5 @@ WORKDIR openrefine-2.6-rc.2/
 
 EXPOSE 3333
 
+RUN ./refine -i 0.0.0.0
 CMD ./refine
