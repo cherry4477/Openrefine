@@ -33,12 +33,12 @@
 
 
 #Openrefine部署
-  1.  首先将我们需要的代码`oc new-build`下来 
+  1.  首先将我们需要的代码`oc new-build`下来
   
 
 
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
-        
+    
   等待build完成  
   
   
@@ -54,13 +54,15 @@
     openrefine-1-deploy      1/1       Running             0          6s
 
 我们等他部署完成  
-  
-  3.  部署完成后，我们使用`oc get pod` 查看一下pod运行状况 
+
+  3.  部署完成后，我们使用`oc get pod` 查看一下pod运行状况
+
 
     songzx@openshift-container-deploy2 ~]$ oc get po
     NAME                     READY     STATUS      RESTARTS   AGE
     openrefine-1-1pel0       1/1       Running     0          1m
   
+
 
 
 我们看到openrefine正在运行  
