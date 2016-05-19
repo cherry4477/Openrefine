@@ -28,13 +28,9 @@ CMD ./refine
 启动服务
 
 
-注：由于是容器起来的服务，所以需连接到容器内更改ip和端口号，命令为
 
-./refine -i 0.0.0.0 -p 80
 
-设置完以后生成svc，--port指向80即可。
-
-#Openrefineb部署
+#Openrefine部署
 
 1.  首先将我们需要的代码build下来
   
