@@ -42,7 +42,7 @@
         
   等待build完成  
   
-2.build完成之后 ，我们使用oc run命令指定一个名字，并指定镜像给他跑起来  
+2.build完成之后 ，我们使用'oc run'命令指定一个名字，并指定镜像给他跑起来  
 
 
 
@@ -56,7 +56,7 @@
 
 我们等他部署完成  
 
-3.部署完成后，我们使用oc get pod 查看一下pod运行状况 
+3.部署完成后，我们使用'oc get pod' 查看一下pod运行状况 
 
     songzx@openshift-container-deploy2 ~]$ oc get po
     NAME                     READY     STATUS      RESTARTS   AGE
@@ -73,7 +73,7 @@
     # 
     # 
 
-我们通过oc rsh 命令连进了容器，容器中有个启动脚本需要我们手动启动，脚本名字是 refine，我们可以看一下
+我们通过'oc rsh' 命令连进了容器，容器中有个启动脚本需要我们手动启动，脚本名字是 'refine'，我们可以看一下
 
 
     # ls
