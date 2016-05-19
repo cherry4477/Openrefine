@@ -33,7 +33,7 @@
 
 
 #Openrefine部署
-`**一**`.  首先将我们需要的代码`oc new-build`下来
+**一**.  首先将我们需要的代码`oc new-build`下来
 
 
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
