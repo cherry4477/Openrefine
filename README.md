@@ -34,7 +34,6 @@
 
 #Openrefine部署
 1.  首先将我们需要的代码`oc new-build`下来
-  
 
 
         [songzx@openshift-container-deploy2 ~]$ oc new-build https://github.com/szx0512/szx.git  
@@ -109,9 +108,9 @@
 
     Point your browser to http://0.0.0.0:80/ to start using Refine. (1298ms)
 
-这个时候我们看到会有报错信息，这个不影响我们正常访问使用，因为这个服务配置文件中有一个启动后需要打开浏览器，这里显示找不到浏览器，所以我们不用在意这个报错，只要外部可以正常使用正常显示就可以了，接下来我们退出容器，去给服务配置route  
+这个时候我们看到会有报错信息，这个不影响我们正常访问使用，因为这个服务配置文件中有一个启动后需要打开浏览器，这里显示找不到浏览器，所以我们不用在意这个报错，只要外部可以正常使用正常显示就可以了，接下来我们退出容器，去给服务配置route
 
-  
+
 5.  我们先生成一个svc，并指定端口为80
 
 
@@ -122,14 +121,17 @@
 6.  接下来就是我们给openrefine服务做一个route，让他可以外网访问
 
 
+
     [songzx@openshift-container-deploy2 ~]$ oc expose svc openrefine 
-    route "openrefine" exposed  
-  
+    route "openrefine" exposed
+
+
 
 7.  我们通过查看服务的域名去进行访问测试，这样，openrefine就搭建完成了。
+
+
 
 
     [songzx@openshift-container-deploy2 ~]$ oc get route
     NAME         HOST/PORT                         PATH      SERVICE      TERMINATION   LABELS
     openrefine   openrefine-songzx.app.dataos.io             openrefine                 run=openrefine
-  
