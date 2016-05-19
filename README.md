@@ -66,14 +66,14 @@
 
 我们看到openrefine正在运行  
   
-.  因openrefine使用的是默认配置，所以我们按照自己的需要去修改，dockerfile里面写的是默认配置，直接使用即可
+.  因openrefine使用的是默认配置，所以我们按照自己的需要去修改，dockerfile里面写的是默认配置，直接使用即可，我们可以进入容器看一下里面的项目，方便之后出错的排错工作
 
 
         [songzx@openshift-container-deploy2 ~]$ oc rsh openrefine-1-1pel0
         # 
         # 
 
-我们通过`oc rsh` 命令连进了容器，容器中有个启动脚本，我们可以通过它来配置，脚本名字是 `refine`，我们可以看一下
+我们通过`oc rsh` 命令连进了容器，容器中有个启动脚本，我们可以通过它来配置，脚本名字是 `refine`，
 
 
         # ls
